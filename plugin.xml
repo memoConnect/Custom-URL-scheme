@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="nl.x-services.plugins.launchmyapp"
+        id="de.cameonet.cordova.url-scheme"
         version="3.2.2">
 
-  <name>Custom URL scheme</name>
+  <name>Cameonet Url Scheme</name>
 
   <description>
     Launch your app by using this URL:  mycoolapp://
     You can add a path and even pass params like this: mycoolerapp://somepath?foo=bar
+    Hardcoded scheme: cameonet
   </description>
 
   <license>MIT</license>
 
-  <preference name="URL_SCHEME" />
+  <!-- <preference name="URL_SCHEME" />-->
 
   <engines>
     <engine name="cordova" version=">=3.0.0"/>
@@ -30,7 +31,7 @@
         <dict>
           <key>CFBundleURLSchemes</key>
           <array>
-            <string>$URL_SCHEME</string>
+            <string>cameonet</string>
           </array>
         </dict>
       </array>
@@ -53,7 +54,7 @@
 
     <config-file target="AndroidManifest.xml" parent="/*/application/activity">
       <intent-filter>
-        <data android:scheme="$URL_SCHEME"/>
+        <data android:scheme="cameonet"/>
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
@@ -65,7 +66,7 @@
   <platform name="windows8">
     <config-file target="package.appxmanifest" parent="/Package/Applications/Application/Extensions">
       <Extension Category="windows.protocol" StartPage="www/index.html">
-        <Protocol Name="$URL_SCHEME" />
+        <Protocol Name="cameonet" />
       </Extension>
     </config-file>
     
@@ -78,17 +79,17 @@
   <platform name="windows">
     <config-file target="package.windows.appxmanifest" parent="/Package/Applications/Application/Extensions">
       <Extension Category="windows.protocol" StartPage="www/index.html">
-        <Protocol Name="$URL_SCHEME" />
+        <Protocol Name="cameonet" />
       </Extension>
     </config-file>
     <config-file target="package.windows80.appxmanifest" parent="/Package/Applications/Application/Extensions">
       <Extension Category="windows.protocol" StartPage="www/index.html">
-        <Protocol Name="$URL_SCHEME" />
+        <Protocol Name="cameonet" />
       </Extension>
     </config-file>
     <config-file target="package.phone.appxmanifest" parent="/Package/Applications/Application/Extensions">
       <Extension Category="windows.protocol" StartPage="www/index.html">
-        <Protocol Name="$URL_SCHEME" />
+        <Protocol Name="cameonet" />
       </Extension>
     </config-file>
     <js-module src="www/windows/LaunchMyApp.js" name="LaunchMyApp">
